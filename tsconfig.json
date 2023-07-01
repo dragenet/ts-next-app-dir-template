@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "es5",
       "dom",
       "dom.iterable",
       "esnext"
@@ -20,10 +21,13 @@
     "incremental": true,
     "types": [
       "jest",
-      "node",
-    ],
+      "node"
+    ]
   },
 
+  "include": [
+    "./**/*.ts",
+  ],
   "exclude": [
     "node_modules"
   ]

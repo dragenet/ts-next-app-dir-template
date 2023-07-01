@@ -5,6 +5,7 @@
   ],
   "scripts": {
     "web": "yarn workspace webapp",
+    "e2e": "yarn workspace e2e",
     "husky:setup": "yarn husky install",
     "prepare": "yarn husky:setup"
   },
