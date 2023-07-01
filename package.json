@@ -1,7 +1,20 @@
 {
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "web": "yarn workspace webapp"
+    "web": "yarn workspace webapp",
+    "husky:setup": "yarn husky install",
+    "prepare": "yarn husky:setup"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
