@@ -39,7 +39,9 @@ jobs:
         run: yarn install
 
       - name: Cypress.io
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           start: yarn web start
           wait-on: 'http://localhost:3000'
+          browser: chrome
+          project: ./packages/e2e
