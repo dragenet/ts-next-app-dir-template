@@ -10,6 +10,7 @@ runs:
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
+      shell: bash
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Create yarn cache
@@ -30,5 +31,5 @@ runs:
 
     - name: Install dependencies
       if: steps.node_modules.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
       shell: 'bash'
+      run: yarn install --frozen-lockfile
