@@ -37,8 +37,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
 
-      - name: Build webapp
-        run: yarn web build
+      - name: Build Next.js app
+        uses: dietday/food-composer-frontend/.github/actions/next-cached-build@fdee6af4cae9845163d4c57d0a4fd27894c06ad5
 
       - name: Cypress.io
         uses: cypress-io/github-action@v5
