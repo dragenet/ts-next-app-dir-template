@@ -25,7 +25,7 @@ runs:
       id: next-cache
       with:
         path: ${{ inputs.dist-directory }}
-        key: ${{ runner.os }}-next-cache-${{ hashFiles(inputs.src-directory) }}
+        key: ${{ runner.os }}-next-build-cache-${{ hashFiles(inputs.src-directory, '**/tsconfig.json')  }}
 
     - name: Build Next.js app
       if: steps.next-cache.outputs.cache-hit != 'true'
