@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dietday/food-composer-frontend/.github/actions/setup-project@actions/setup-project/v0.1.2
+      - uses: ./.github/actions/setup-project
+        with:
+          cache-lookup-only: true
 
   webapp-lint:
     name: Lint webapp
