@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     branches:
       - '*'
@@ -7,19 +8,24 @@ on:
       - '*'
 
 jobs:
-  webapp-lint:
-    name: Lint webapp
+  webapp-setup:
+    name: Setup cache environment
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
+      - uses: ./.github/actions/setup-project
         with:
-          node-version-file: '.nvmrc'
+          cache-lookup-only: true
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+  webapp-lint:
+    name: Lint webapp
+    runs-on: ubuntu-latest
+    needs: ['webapp-setup']
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@actions/setup-project/v0.1.2
 
       - name: Lint
         run: yarn web lint
@@ -27,16 +33,11 @@ jobs:
   webapp-unit:
     name: Webapp unit test
     runs-on: ubuntu-latest
+    needs: ['webapp-setup']
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@actions/setup-project/v0.1.2
 
       - name: Run tests with jest
         run: yarn web test:ci
@@ -44,18 +45,13 @@ jobs:
   webapp-e2e:
     name: Webapp e2e test
     runs-on: ubuntu-latest
+    needs: ['webapp-setup']
 
     steps:
       - uses: actions/checkout@v3
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@actions/setup-project/v0.1.2
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build webapp
+      - name: Build Next.js app
         run: yarn web build
 
       - name: Cypress.io
