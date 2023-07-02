@@ -41,7 +41,7 @@ runs:
       uses: actions/cache@v3
       id: cypress-cache
       with:
-        path: '~/.cache/Cypress'
+        path: '/home/runner/.cache/Cypress'
         key: cypress-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
         lookup-only: ${{ inputs.cache-lookup-only }}
 
