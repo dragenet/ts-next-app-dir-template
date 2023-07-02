@@ -35,6 +35,7 @@ runs:
       with:
         path: '**/node_modules'
         key: node_modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
+        lookup-only: ${{ inputs.cache-lookup-only }}
 
     - name: Install dependencies
       if: steps.node_modules.outputs.cache-hit != 'true'
