@@ -1,0 +1,33 @@
+name: 'Next.js cached build'
+description: 'Build next.js app with cache'
+
+inputs:
+  build-command:
+    description: 'Build command'
+    required: true
+    default: 'yarn web build'
+
+  src-directory:
+    description: 'Next.js project src absolute path'
+    required: true
+    default: 'packages/webapp/src'
+
+  dist-directory:
+    description: 'Next.js distribution absolute path'
+    required: true
+    default: 'packages/webapp/.next'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Create next.js build cache
+      uses: actions/cache@v3
+      id: next-cache
+      with:
+        path: ${{ inputs.dist-directory }}
+        key: ${{ runner.os }}-next-cache-${{ hashFiles(inputs.next.directory) }}
+
+    - name: Build Next.js app
+      if: ${{ steps.next-cache.outputs.cache-hit != 'true }}
+      run: ${{ build-command }}
+      shell: bash
