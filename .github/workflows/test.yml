@@ -1,0 +1,67 @@
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  webapp-lint:
+    name: Lint webapp
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn web lint
+
+  webapp-unit:
+    name: Webapp unit test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run tests with jest
+        run: yarn web test:ci
+
+  webapp-e2e:
+    name: Webapp e2e test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build webapp
+        run: yarn web build
+
+      - name: Cypress.io
+        uses: cypress-io/github-action@v5
+        with:
+          start: yarn web start
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          project: ./packages/e2e
