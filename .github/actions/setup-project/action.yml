@@ -20,14 +20,14 @@ runs:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
         key: ${{ runner.os }}-${{ runner.arch }}-yarn-cache-yarn.lock@${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-${{ runner.arch }}-yarn-
 
     - name: Create node_modules cache
       uses: actions/cache@v3
       id: node_modules
       with:
         path: '**/node_modules'
-        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-${{ runner.arch }}-node_modules-${{ hashFiles('**/yarn.lock') }}
 
     - name: Install dependencies
       if: steps.node_modules.outputs.cache-hit != 'true'
