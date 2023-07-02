@@ -24,13 +24,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
 
       - name: Run tests with jest
         run: yarn web test:ci
@@ -41,13 +35,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
 
       - name: Build webapp
         run: yarn web build
