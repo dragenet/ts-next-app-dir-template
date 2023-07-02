@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project/v0.1.1
 
       - name: Lint
         run: yarn web lint
@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project/v0.1.1
 
       - name: Run tests with jest
         run: yarn web test:ci
@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project/v0.1.1
 
       - name: Build Next.js app
         uses: ./.github/actions/next-cached-build
