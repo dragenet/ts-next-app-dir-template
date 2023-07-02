@@ -20,14 +20,20 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Get NodeJS Version
+      id: node-version
+      shell: bash
+      run: |
+        echo "::set-output name=version::$(node --version)"
+
     - name: Create next.js build cache
       uses: actions/cache@v3
       id: next-cache
       with:
         path: ${{ inputs.dist-directory }}
-        key: ${{ runner.os }}-next-build-cache-${{ hashFiles(inputs.src-directory, '**/tsconfig.json')  }}
+        key: ${{ runner.os }}-node@v${steps.node-version.outputs.version}-next-build-cache-${{ hashFiles(inputs.src-directory, '**/tsconfig.json')  }}
 
     - name: Build Next.js app
       if: steps.next-cache.outputs.cache-hit != 'true'
-      run: ${{ inputs.build-command }}
       shell: bash
+      run: ${{ inputs.build-command }}
