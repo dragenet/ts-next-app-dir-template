@@ -23,7 +23,7 @@ runs:
     - name: Get NodeJS Version
       id: node-version
       shell: bash
-      run: echo "{version}={$(node --version)}" >> $GITHUB_OUTPUT
+      run: echo "version=$(node --version)" >> $GITHUB_OUTPUT
 
 
     - name: Create next.js build cache
