@@ -28,6 +28,6 @@ runs:
         key: ${{ runner.os }}-next-cache-${{ hashFiles(inputs.next.directory) }}
 
     - name: Build Next.js app
-      if: ${{ steps.next-cache.outputs.cache-hit != 'true' }}
-      run: ${{ build-command }}
+      if: steps.next-cache.outputs.cache-hit != 'true'
+      run: ${{ inputs.build-command }}
       shell: bash
