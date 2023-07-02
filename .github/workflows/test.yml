@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup-project
+      - uses: dietday/food-composer-frontend/.github/actions/setup-project@setup-project-action/v0.1.0
 
       - name: Lint
         run: yarn web lint
