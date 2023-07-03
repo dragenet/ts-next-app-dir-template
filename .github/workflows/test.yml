@@ -55,7 +55,7 @@ jobs:
         run: yarn web build
 
       - name: Install cypress
-        run: cypress install
+        run: npx cypress install
 
       - name: Cypress.io
         uses: cypress-io/github-action@v5
