@@ -13,31 +13,32 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
+        cache: 'yarn'
 
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      shell: bash
-      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+#    - name: Get yarn cache directory path
+#      id: yarn-cache-dir-path
+#      shell: bash
+#      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-    - name: Create yarn cache
-      uses: actions/cache@v3
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: yarn-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-${{ runner.arch }}-yarn-
-        lookup-only: ${{ inputs.cache-lookup-only }}
-
-    - name: Create node_modules cache
-      uses: actions/cache@v3
-      id: node-modules-cache
-      with:
-        path: '**/node_modules'
-        key: node_modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
-        lookup-only: ${{ inputs.cache-lookup-only }}
+#    - name: Create yarn cache
+#      uses: actions/cache@v3
+#      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+#      with:
+#        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+#        key: yarn-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
+#        restore-keys: |
+#          ${{ runner.os }}-${{ runner.arch }}-yarn-
+#        lookup-only: ${{ inputs.cache-lookup-only }}
+#
+#    - name: Create node_modules cache
+#      uses: actions/cache@v3
+#      id: node-modules-cache
+#      with:
+#        path: '**/node_modules'
+#        key: node_modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
+#        lookup-only: ${{ inputs.cache-lookup-only }}
 
     - name: Install dependencies
-      if: steps.yarn-cache.outputs.cache-hit != 'true' || steps.node-modules-cache.outputs.cache-hit != 'true'
+#      if: steps.yarn-cache.outputs.cache-hit != 'true' || steps.node-modules-cache.outputs.cache-hit != 'true'
       shell: 'bash'
       run: yarn install --frozen-lockfile
