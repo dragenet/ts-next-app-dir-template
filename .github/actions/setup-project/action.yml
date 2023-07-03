@@ -31,7 +31,7 @@ runs:
 
     - name: Create node_modules cache
       uses: actions/cache@v3
-      id: node_modules
+      id: node-modules-cache
       with:
         path: '**/node_modules'
         key: node_modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
@@ -46,6 +46,6 @@ runs:
         lookup-only: ${{ inputs.cache-lookup-only }}
 
     - name: Install dependencies
-      if: steps.node_modules.outputs.cache-hit != 'true'
+      if: steps.yarn-cache.outputs.cache-hit != 'true' || steps.node-modules-cache.outputs.cache-hit != 'true' || steps.cypress-cache.outputs.cache-hit != 'true'
       shell: 'bash'
       run: yarn install --frozen-lockfile
