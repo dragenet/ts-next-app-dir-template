@@ -9,15 +9,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      shell: bash
-      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
     - name: Create cypress binary cache
       uses: actions/cache@v3
       id: cypress-cache
