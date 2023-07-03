@@ -1,0 +1,32 @@
+name: 'Install cypress'
+
+inputs:
+  cache-lookup-only:
+    description: 'Should cache be restored'
+    required: true
+    default: false
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version-file: '.nvmrc'
+
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      shell: bash
+      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+    - name: Create cypress binary cache
+      uses: actions/cache@v3
+      id: cypress-cache
+      with:
+        path: '~/.cache/Cypress'
+        key: cypress-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
+        lookup-only: ${{ inputs.cache-lookup-only }}
+
+    - name: Install cypress
+      if: steps.cypress-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: npx cypress install

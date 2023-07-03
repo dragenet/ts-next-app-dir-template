@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-project
-#        with:
-#          cache-lookup-only: true
+        with:
+          cache-lookup-only: true
 
   webapp-lint:
     name: Lint webapp
@@ -54,8 +54,7 @@ jobs:
       - name: Build Next.js app
         run: yarn web build
 
-      - name: Install cypress
-        run: npx cypress install
+      - uses: ./.github/actions/install-cypress
 
       - name: Cypress.io
         uses: cypress-io/github-action@v5

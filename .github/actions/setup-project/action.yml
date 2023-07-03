@@ -37,14 +37,6 @@ runs:
         key: node_modules-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
         lookup-only: ${{ inputs.cache-lookup-only }}
 
-    - name: Create cypress binary cache
-      uses: actions/cache@v3
-      id: cypress-cache
-      with:
-        path: '/home/runner/.cache/Cypress'
-        key: cypress-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('**/yarn.lock') }}
-        lookup-only: ${{ inputs.cache-lookup-only }}
-
     - name: Install dependencies
       if: steps.yarn-cache.outputs.cache-hit != 'true' || steps.node-modules-cache.outputs.cache-hit != 'true' || steps.cypress-cache.outputs.cache-hit != 'true'
       shell: 'bash'
