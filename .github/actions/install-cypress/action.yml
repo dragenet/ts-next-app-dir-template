@@ -20,4 +20,4 @@ runs:
     - name: Install cypress
       if: steps.cypress-cache.outputs.cache-hit != 'true'
       shell: bash
-      run: npx cypress install
+      run: yarn dlx cypress install

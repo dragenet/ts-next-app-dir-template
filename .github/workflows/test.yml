@@ -8,20 +8,10 @@ on:
       - '*'
 
 jobs:
-  webapp-setup:
-    name: Setup cache environment
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup-project
-        with:
-          cache-lookup-only: true
 
   webapp-lint:
     name: Lint webapp
     runs-on: ubuntu-latest
-    needs: ['webapp-setup']
 
     steps:
       - uses: actions/checkout@v3
@@ -33,7 +23,6 @@ jobs:
   webapp-unit:
     name: Webapp unit test
     runs-on: ubuntu-latest
-    needs: ['webapp-setup']
 
     steps:
       - uses: actions/checkout@v3
@@ -45,7 +34,6 @@ jobs:
   webapp-e2e:
     name: Webapp e2e test
     runs-on: ubuntu-latest
-    needs: ['webapp-setup']
 
     steps:
       - uses: actions/checkout@v3
