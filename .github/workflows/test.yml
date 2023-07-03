@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-project
-        with:
-          cache-lookup-only: true
+#        with:
+#          cache-lookup-only: true
 
   webapp-lint:
     name: Lint webapp
