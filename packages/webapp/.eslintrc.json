@@ -5,5 +5,8 @@
     "plugin:jest-dom/recommended",
     "../../.eslintrc.json"
   ],
-  "plugins": [ "jest-dom"]
+  "plugins": ["jest-dom"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  }
 }

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "cypress": "cypress open",
-    "cypress:ci": "cypress run"
+    "cypress:ci": "cypress run",
+    "lint": "eslint",
+    "tscheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/cypress": "1.1.3",

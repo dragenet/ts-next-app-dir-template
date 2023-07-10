@@ -1,8 +1,10 @@
 {
+  "root": true,
   "plugins": ["@typescript-eslint"],
   "extends": ["prettier"],
 
   "rules": {
     "no-unused-vars": "error"
-  }
+  },
+  "ignorePatterns": ["lint-staged.config.js"]
 }

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "tscheck": "tsc --noEmit",
     "prettier": "prettier -w src",
     "test": "jest --watch",
     "test:ci": "jest --ci"
