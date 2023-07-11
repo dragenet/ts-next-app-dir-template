@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import Providers from '@/app/components/providers/Providers';
+import Providers from '@/components/providers/Providers';
 import { render } from '@testing-library/react';
 
 const renderTestWithProviders = (component: ReactNode) =>
