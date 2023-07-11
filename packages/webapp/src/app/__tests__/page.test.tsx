@@ -1,7 +1,7 @@
-import {render} from '@testing-library/react'
-import Home from '../page'
+import Home from '../page';
+import renderTestWithProviders from '@/utils/test/renderWithProviders';
 
 test('test', () => {
-  const {container} = render(<Home />)
+  const { container } = renderTestWithProviders(<Home />);
   expect(container).toMatchSnapshot();
 });
