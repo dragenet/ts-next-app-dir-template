@@ -9,7 +9,7 @@ interface StylesProviderProps {
   children: ReactNode | string;
 }
 
-export const UIProvider = ({ children }: StylesProviderProps) => {
+const StylesProvider = ({ children }: StylesProviderProps) => {
   const cache = useEmotionCache();
   cache.compat = true;
 
@@ -30,3 +30,5 @@ export const UIProvider = ({ children }: StylesProviderProps) => {
     </CacheProvider>
   );
 };
+
+export default StylesProvider;
