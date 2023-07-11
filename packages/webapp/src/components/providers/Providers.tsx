@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import StylesProvider from '@/app/components/providers/StylesProvider';
+import StylesProvider from '@/components/providers/StylesProvider';
 
 interface ProvidersProps {
   children: ReactNode;
