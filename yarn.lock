@@ -540,7 +540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.11.1":
+"@emotion/react@npm:11.11.1":
   version: 11.11.1
   resolution: "@emotion/react@npm:11.11.1"
   dependencies:
@@ -574,7 +574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/server@npm:^11.11.0":
+"@emotion/server@npm:11.11.0":
   version: 11.11.0
   resolution: "@emotion/server@npm:11.11.0"
   dependencies:
@@ -1099,7 +1099,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^6.0.16":
+"@mantine/core@npm:6.0.16":
   version: 6.0.16
   resolution: "@mantine/core@npm:6.0.16"
   dependencies:
@@ -1117,7 +1117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^6.0.16":
+"@mantine/hooks@npm:6.0.16":
   version: 6.0.16
   resolution: "@mantine/hooks@npm:6.0.16"
   peerDependencies:
@@ -1126,7 +1126,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^6.0.16":
+"@mantine/next@npm:6.0.16":
   version: 6.0.16
   resolution: "@mantine/next@npm:6.0.16"
   dependencies:
@@ -8797,11 +8797,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webapp@workspace:packages/webapp"
   dependencies:
-    "@emotion/react": ^11.11.1
-    "@emotion/server": ^11.11.0
-    "@mantine/core": ^6.0.16
-    "@mantine/hooks": ^6.0.16
-    "@mantine/next": ^6.0.16
+    "@emotion/react": 11.11.1
+    "@emotion/server": 11.11.0
+    "@mantine/core": 6.0.16
+    "@mantine/hooks": 6.0.16
+    "@mantine/next": 6.0.16
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/react": 14.0.0
     "@testing-library/user-event": 14.4.3
