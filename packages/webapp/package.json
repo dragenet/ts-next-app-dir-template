@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --config ../../.prettierrc.json -w src",
     "tscheck": "tsc --noEmit",
-    "prettier": "prettier -w src",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
