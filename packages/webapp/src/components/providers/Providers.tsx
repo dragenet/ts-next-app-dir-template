@@ -1,14 +1,20 @@
-'use client';
+'use client'
 
-import { ReactNode } from 'react';
-import StylesProvider from '@/components/providers/StylesProvider';
+import { store } from '@/store'
+import { ReactNode } from 'react'
+import { Provider } from 'react-redux'
+import StylesProvider from './StylesProvider'
 
 interface ProvidersProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Providers = ({ children }: ProvidersProps) => {
-  return <StylesProvider>{children}</StylesProvider>;
-};
+  return (
+    <StylesProvider>
+      <Provider store={store}>{children}</Provider>
+    </StylesProvider>
+  )
+}
 
-export default Providers;
+export default Providers
