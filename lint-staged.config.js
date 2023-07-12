@@ -3,7 +3,7 @@ module.exports = {
 
   //webapp
   'packages/webapp/**/*.(ts|tsx|js)': filenames => [
-    `yarn web lint:fix ${filenames.join(' ')}"`,
+    `yarn web exec 'eslint --fix ${filenames.join(' ')}'"`,
     `yarn web prettier ${filenames.join(' ')}"`,
     `yarn web tscheck`,
   ],
