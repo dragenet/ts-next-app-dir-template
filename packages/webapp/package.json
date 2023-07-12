@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --config ../../.prettierrc.json -w src",
     "tscheck": "tsc --noEmit",
-    "prettier": "prettier -w src",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
@@ -18,9 +19,11 @@
     "@mantine/core": "6.0.16",
     "@mantine/hooks": "6.0.16",
     "@mantine/next": "6.0.16",
+    "@reduxjs/toolkit": "^1.9.5",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.1.1",
     "typescript": "5.1.6"
   },
   "devDependencies": {

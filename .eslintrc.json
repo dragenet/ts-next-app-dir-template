@@ -4,7 +4,8 @@
   "extends": ["prettier"],
 
   "rules": {
-    "no-unused-vars": "error"
+    "no-unused-vars": "error",
+    "arrow-parens": ["error", "as-needed"]
   },
   "ignorePatterns": ["lint-staged.config.js"]
 }

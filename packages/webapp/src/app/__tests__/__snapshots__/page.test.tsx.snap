@@ -2,6 +2,11 @@
 
 exports[`test 1`] = `
 <div>
+  <h1
+    class="mantine-Text-root mantine-Title-root mantine-dicgnb"
+  >
+    0
+  </h1>
   <button
     class="mantine-UnstyledButton-root mantine-Button-root mantine-g7194"
     data-button="true"
@@ -13,7 +18,22 @@ exports[`test 1`] = `
       <span
         class="mantine-1ryt1ht mantine-Button-label"
       >
-        Click ME!!!
+        Increment!!!
+      </span>
+    </div>
+  </button>
+  <button
+    class="mantine-UnstyledButton-root mantine-Button-root mantine-g7194"
+    data-button="true"
+    type="button"
+  >
+    <div
+      class="mantine-1wpc1xj mantine-Button-inner"
+    >
+      <span
+        class="mantine-1ryt1ht mantine-Button-label"
+      >
+        Decrement!!!
       </span>
     </div>
   </button>
