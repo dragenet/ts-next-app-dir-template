@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import Providers from '@/components/providers/Providers'
+import '@/styles/global.css'
 
 export interface RootLayoutProps {
   children: ReactNode
