@@ -9,8 +9,12 @@ const Page = () => {
   return (
     <>
       <p>{counterValue}</p>
-      <button onClick={() => dispatch(increment())}>Increment!!!</button>
-      <button onClick={() => dispatch(decrement())}>Decrement!!!</button>
+      <button className="btn" onClick={() => dispatch(increment())}>
+        Increment!!!
+      </button>
+      <button className="btn" onClick={() => dispatch(decrement())}>
+        Decrement!!!
+      </button>
     </>
   )
 }
