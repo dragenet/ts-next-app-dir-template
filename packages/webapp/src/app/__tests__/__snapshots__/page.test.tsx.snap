@@ -2,40 +2,18 @@
 
 exports[`test 1`] = `
 <div>
-  <h1
-    class="mantine-Text-root mantine-Title-root mantine-dicgnb"
-  >
+  <p>
     0
-  </h1>
+  </p>
   <button
-    class="mantine-UnstyledButton-root mantine-Button-root mantine-g7194"
-    data-button="true"
-    type="button"
+    class="btn"
   >
-    <div
-      class="mantine-1wpc1xj mantine-Button-inner"
-    >
-      <span
-        class="mantine-1ryt1ht mantine-Button-label"
-      >
-        Increment!!!
-      </span>
-    </div>
+    Increment!!!
   </button>
   <button
-    class="mantine-UnstyledButton-root mantine-Button-root mantine-g7194"
-    data-button="true"
-    type="button"
+    class="btn"
   >
-    <div
-      class="mantine-1wpc1xj mantine-Button-inner"
-    >
-      <span
-        class="mantine-1ryt1ht mantine-Button-label"
-      >
-        Decrement!!!
-      </span>
-    </div>
+    Decrement!!!
   </button>
 </div>
 `;
