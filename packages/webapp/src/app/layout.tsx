@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react'
+import Navbar from '@/components/organisms/Navbar'
 import Providers from '@/components/providers/Providers'
 import '@/styles/global.css'
+import React, { ReactNode } from 'react'
 
 export interface RootLayoutProps {
   children: ReactNode
@@ -13,9 +14,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="brand">
       <body suppressHydrationWarning={true}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="flex flex-col">
+            <Navbar />
+            <div>{children}</div>
+          </div>
+        </Providers>
       </body>
     </html>
   )
