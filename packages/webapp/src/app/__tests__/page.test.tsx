@@ -1,7 +1,10 @@
+import { describe } from 'node:test'
 import Home from '../page'
 import renderTestWithProviders from '@/utils/test/renderTestWithProviders'
 
-test('test', () => {
-  const { container } = renderTestWithProviders(<Home />)
-  expect(container).toMatchSnapshot()
+describe('Home page', () => {
+  it('should render and match snapshot', () => {
+    const { container } = renderTestWithProviders(<Home />)
+    expect(container).toMatchSnapshot()
+  })
 })

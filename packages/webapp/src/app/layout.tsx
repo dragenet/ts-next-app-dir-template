@@ -1,4 +1,3 @@
-import Navbar from '@/components/organisms/Navbar'
 import Providers from '@/components/providers/Providers'
 import '@/styles/global.css'
 import React, { ReactNode } from 'react'
@@ -17,10 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" data-theme="brand">
       <body suppressHydrationWarning={true}>
         <Providers>
-          <div className="flex flex-col">
-            <Navbar />
-            <div>{children}</div>
-          </div>
+          <RootLayout>{children}</RootLayout>
         </Providers>
       </body>
     </html>
