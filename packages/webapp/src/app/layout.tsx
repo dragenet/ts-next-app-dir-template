@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react'
 import Providers from '@/components/providers/Providers'
 import '@/styles/global.css'
+import RootTemplate from '@/components/templates/RootTemplate'
+import React, { ReactNode } from 'react'
 
 export interface RootLayoutProps {
   children: ReactNode
@@ -13,9 +14,11 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="brand">
       <body suppressHydrationWarning={true}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <RootTemplate>{children}</RootTemplate>
+        </Providers>
       </body>
     </html>
   )

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RootTemplate should render with content 1`] = `
+<div>
+  <div
+    class="flex flex-col"
+  >
+    <div
+      class="navbar bg-base-100"
+      data-component_name="Navbar"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost normal-case text-xl"
+        >
+          Food Composer
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <button
+          class="btn btn-ghost btn-circle"
+        >
+          <div
+            class="avatar placeholder"
+          >
+            <div
+              class="bg-neutral-focus text-neutral-content rounded-full w-10"
+            >
+              <span
+                class="text-l"
+              >
+                JD
+              </span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        data-testname="content"
+      />
+    </div>
+  </div>
+</div>
+`;
