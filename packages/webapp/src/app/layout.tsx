@@ -1,5 +1,6 @@
 import Providers from '@/components/providers/Providers'
 import '@/styles/global.css'
+import RootTemplate from '@/components/templates/RootTemplate'
 import React, { ReactNode } from 'react'
 
 export interface RootLayoutProps {
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" data-theme="brand">
       <body suppressHydrationWarning={true}>
         <Providers>
-          <RootLayout>{children}</RootLayout>
+          <RootTemplate>{children}</RootTemplate>
         </Providers>
       </body>
     </html>

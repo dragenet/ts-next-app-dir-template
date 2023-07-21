@@ -1,10 +1,10 @@
 'use client'
 
 import Navbar from '@/components/organisms/Navbar'
-import React, { JSX } from 'react'
+import React, { ReactNode } from 'react'
 
 interface RootTemplateProps {
-  children: JSX.Element | string
+  children: ReactNode
 }
 
 const RootTemplate = ({ children }: RootTemplateProps) => {
