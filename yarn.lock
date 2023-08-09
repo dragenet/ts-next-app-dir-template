@@ -8629,6 +8629,7 @@ __metadata:
     jest-environment-jsdom: 29.6.1
     next: 13.4.12
     postcss: ^8.4.26
+    prettier: ^3.0.1
     react: 18.2.0
     react-dom: 18.2.0
     react-redux: ^8.1.1
