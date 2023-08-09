@@ -1,7 +1,8 @@
 'use client'
 
-import Navbar from '@/components/organisms/Navbar'
 import React, { ReactNode } from 'react'
+
+import Navbar from '@/components/organisms/Navbar'
 
 interface RootTemplateProps {
   children: ReactNode

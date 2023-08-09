@@ -1,6 +1,8 @@
 import { describe } from 'node:test'
-import Home from '../page'
+
 import renderTestWithProviders from '@/utils/test/renderTestWithProviders'
+
+import Home from '../page'
 
 describe('Home page', () => {
   it('should render and match snapshot', () => {
