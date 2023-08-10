@@ -73,12 +73,6 @@ atlassian-ide-plugin.xml
 # SonarLint plugin
 .idea/sonarlint/
 
-# Yarn Berry
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-.pnp.*
-
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -129,3 +123,13 @@ fabric.properties
 
 # tsc cache
 **/tsconfig.tsbuildinfo
+
+# Yarn Berry
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
