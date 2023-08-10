@@ -34,7 +34,7 @@
     "daisyui": "latest",
     "eslint": "^8.46.0",
     "eslint-config-next": "13.4.10",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jest-dom": "5.0.2",
     "jest": "29.6.1",
     "jest-environment-jsdom": "29.6.1",
